@@ -1,0 +1,369 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #5f27cd;
+  --accent-color: #ff6b6b;
+  --background-light: #f7f9fc;
+  --text-dark: #2c3e50;
+  --text-muted: #7f8c8d;
+}
+
+.student-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.student-page h2 {
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.student-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-form input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.student-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.error-message {
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.submit-btn {
+  grid-column: span 2;
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.student-list {
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.student-list table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.student-list th, .student-list td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.student-list th {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  font-weight: bold;
+}
+
+.student-list tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.student-list tr:hover {
+  background-color: #f1f1f1;
+}
+
+.edit-btn, .delete-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.delete-btn {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #ff4757;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.clear-search-btn:hover {
+  color: #333;
+}
+
+.no-results {
+  color: #d9534f;
+  text-align: center;
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.search-stats {
+  text-align: right;
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1200px) {
+  .student-page {
+    padding: 2rem;
+  }
+
+  .student-form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .student-form input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .student-page {
+    padding: 1rem;
+  }
+
+  .student-form {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .student-form input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .student-form button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .search-container {
+    margin-bottom: 1rem;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .student-list table {
+    font-size: 0.9rem;
+  }
+
+  .student-list td, .student-list th {
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .student-page {
+    padding: 0.5rem;
+  }
+
+  .student-form {
+    padding: 1rem;
+  }
+
+  .student-form input {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .search-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .search-input {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .search-stats {
+    font-size: 0.7rem;
+  }
+
+  .student-list table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .student-list thead {
+    display: none;
+  }
+
+  .student-list tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .student-list td {
+    display: block;
+    text-align: right;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .student-list td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .student-list td:last-child {
+    border-bottom: none;
+  }
+
+  .student-list button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .student-page {
+    padding: 0.25rem;
+  }
+
+  .student-form {
+    padding: 0.75rem;
+  }
+
+  .student-form input {
+    padding: 6px;
+    font-size: 0.7rem;
+  }
+
+  .search-input {
+    font-size: 0.7rem;
+    padding: 6px;
+  }
+
+  .student-list td {
+    padding: 6px;
+    font-size: 0.7rem;
+  }
+
+  .student-list button {
+    font-size: 0.7rem;
+    padding: 6px;
+  }
+}
+
+/* Accessibility and Touch-Friendly Adjustments */
+@media (hover: none) and (pointer: coarse) {
+  .student-list button, 
+  .student-form button, 
+  .search-input {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .student-list td, 
+  .student-form input {
+    padding: 12px;
+  }
+}
